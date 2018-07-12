@@ -206,10 +206,14 @@ public class PlayerController : MonoBehaviour {
 		// Perform the raycast and if it hits something on the floor layer...
 		if(Physics.Raycast (camRay, out floorHit, 10000,layerMask))
 		{
+
 			point = new Vector3 (floorHit.point.x,0,floorHit.point.z);
 
-			if(mesh != null)
-			mesh.LookAt (point);
+			if (mesh != null) {
+				mesh.LookAt (point);
+				mesh.localEulerAngles = new Vector3 (0,mesh.localEulerAngles.y,0);
+			}
+	
 		}
 	}
 
