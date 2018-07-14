@@ -227,8 +227,12 @@
      <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\Scripts\Constants.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerUI.cs" />
+     <Compile Include="Assets\Scripts\Rock.cs" />
+     <Compile Include="Assets\Scripts\RockThrower.cs" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\Photon Unity Networking\link.xml" />
      <None Include="Assets\AssetStoreResources\LeanPool\Examples\Fonts\OFL.txt" />

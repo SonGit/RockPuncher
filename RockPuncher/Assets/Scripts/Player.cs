@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(PlayerUI))]
 
 public class Player : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour {
 	public float _currentCharge;
 	public float _punchRange;
 	public float _punchAngle;
+	public float _punchForce;
 	#endregion
 
 	#region caches for profiency
@@ -21,6 +23,8 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_playerController = this.GetComponent<PlayerController> ();
+		_currentCharge = Constants.startCharge;
+		_punchRange = Constants.defaultRange;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +38,17 @@ public class Player : MonoBehaviour {
 	public void Charge()
 	{
 		_currentCharge += _chargeRate * Time.deltaTime;
+
+		// Cap the charge
+		if (_currentCharge > Constants.maxCharge)
+			_currentCharge = Constants.maxCharge;
+
+		// Take the charge into account
+		_punchRange += _currentCharge / 2;
+
+		// Cap the punch range
+		if (_punchRange > Constants.maxCharge)
+			_punchRange = Constants.maxCharge;
 	}
 
 	/// <summary>
@@ -41,8 +56,7 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	public void Discharge()
 	{
-		RaycastForHit ();
-		_currentCharge = 0;
+		Invoke ("RaycastForHit",.25f);
 	}
 
 	/// <summary>
@@ -53,12 +67,20 @@ public class Player : MonoBehaviour {
 	{
 		RaycastHit hit;
 
-		Vector3 origin =  _playerController.mesh.transform.position + new Vector3(0,1,0.4f);
+		Vector3 origin =  _playerController.mesh.transform.position + new Vector3(0,1,0); // the offset amke sure raycast is cast from center of body
 		Vector3 direction =  _playerController.mesh.transform.forward;
 
-		if (Physics.SphereCast(origin, _punchAngle, direction, out hit,_punchRange)) {
-			print (hit.transform.name);
+		if (Physics.Raycast(origin, direction, out hit,_punchRange)) {
+			// push rock away
+			if (hit.transform.tag == "Rock") {
+				hit.rigidbody.AddForceAtPosition (_punchForce * direction ,hit.point);
+				print ("PUSHED " + _punchRange);
+			}
 		}
 
+		// Reset
+		_currentCharge = Constants.startCharge;
+		_punchRange = Constants.defaultRange;
 	}
+		
 }
