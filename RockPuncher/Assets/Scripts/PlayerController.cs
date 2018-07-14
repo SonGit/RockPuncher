@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour {
 	private int layerMask;
 	private float stopShootAnim;
 	private PhotonView photonView;
-	[SerializeField]
-	private bool _readyToShoot;
+
+	private Player player;
 	#endregion
 
 	PhotonView[] gos ;
@@ -68,13 +68,10 @@ public class PlayerController : MonoBehaviour {
 	{
 		_cameraTransform = Camera.main.transform;
 		animator = this.GetComponent<Animator> ();
-
+		player = this.GetComponent<Player> ();
 		grounded = true;
 		layerMask = 1 << LayerMask.NameToLayer ("Floor"); // only check for collisions with Floor layer
 		photonView = this.GetComponent<PhotonView>();
-
-
-
 	}
 
 	void Update()
@@ -101,23 +98,14 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetMouseButton (0)) {
 			isMouseHeldDown = true;
+			player.Charge ();
 		}
 		if (Input.GetMouseButtonUp (0)) {
-			//print ("isMouseHeldDown");
 			isMouseHeldDown = false;
+			player.Discharge ();
 		}
-	}
-		
-	#region attack 
-	/// <summary>
-	/// Check if player is using melee or ranged weapon and play appriate animation
-	/// </summary>
-	void Attack()
-	{
-		isMouseHeldDown = true;
-	}
 
-	#endregion
+	}
 
 	#region movement
 	/// <summary>
