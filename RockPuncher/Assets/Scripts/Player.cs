@@ -44,11 +44,16 @@ public class Player : MonoBehaviour {
 			_currentCharge = Constants.maxCharge;
 
 		// Take the charge into account
-		_punchRange += _currentCharge / 2;
+		if (_currentCharge < Constants.maxCharge) {
+			_punchRange += _currentCharge / Constants.chargeToRangeConversionRate;
+			_punchForce += _currentCharge / Constants.chargeToForceConversionRate;
+		}
 
 		// Cap the punch range
 		if (_punchRange > Constants.maxCharge)
 			_punchRange = Constants.maxCharge;
+		if (_punchForce > Constants.maxForce)
+			_punchForce = Constants.maxForce;
 	}
 
 	/// <summary>
@@ -81,6 +86,7 @@ public class Player : MonoBehaviour {
 		// Reset
 		_currentCharge = Constants.startCharge;
 		_punchRange = Constants.defaultRange;
+		_punchForce = Constants.defaultForce;
 	}
 		
 }

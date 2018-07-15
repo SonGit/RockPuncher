@@ -84,6 +84,7 @@
      <Compile Include="Assets\AssetStoreResources\Top Down Camera\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
      <Compile Include="Assets\AssetStoreResources\Top Down Camera\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\AssetStoreResources\Top Down Camera\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+     <Compile Include="Assets\example.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
@@ -233,6 +234,7 @@
      <Compile Include="Assets\Scripts\PlayerUI.cs" />
      <Compile Include="Assets\Scripts\Rock.cs" />
      <Compile Include="Assets\Scripts\RockThrower.cs" />
+     <Compile Include="Assets\TestDistance.cs" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\Photon Unity Networking\link.xml" />
      <None Include="Assets\AssetStoreResources\LeanPool\Examples\Fonts\OFL.txt" />

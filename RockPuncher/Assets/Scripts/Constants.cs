@@ -23,8 +23,11 @@ public sealed class Constants
 			return _instance;
 		}
 	}
-
-	public static float defaultRange = 1;
+	public static float defaultForce = 1000;
+	public static float defaultRange = 1.1f;
 	public static float startCharge = 1;
-	public static float maxCharge = 5;
+	public static float maxCharge = 10;
+	public static float maxForce = 1200;
+	public static float chargeToRangeConversionRate = 250;
+	public static float chargeToForceConversionRate = 2;
 } 

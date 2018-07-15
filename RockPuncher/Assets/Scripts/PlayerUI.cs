@@ -39,7 +39,7 @@ public class PlayerUI : MonoBehaviour {
 		else 
 		{
 			//_chargeCursor.enabled = true;
-			_chargeCursorScale = _player._punchRange - _offset; // Scale the cursor in accordance to Unity distance unit
+			_chargeCursorScale = _player._punchRange; // Scale the cursor in accordance to Unity distance unit
 			_chargeCursor.transform.localScale = new Vector3(_chargeCursorScale,_chargeCursorScale,_chargeCursorScale);
 		}
 

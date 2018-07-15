@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\example.cs">
     <Files>
-      <File FileName="Assets\Scripts\Constants.cs" Line="12" Column="3" />
-      <File FileName="Assets\Scripts\Player.cs" Line="24" Column="17" />
-      <File FileName="Assets\Scripts\PlayerUI.cs" Line="15" Column="16" />
+      <File FileName="Assets\TestDistance.cs" Line="14" Column="30" />
+      <File FileName="Assets\Scripts\Constants.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\RockThrower.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Rock.cs" Line="1" Column="1" />
       <File FileName="Assets\AssetStoreResources\Top Down Camera\Scripts\TopDownCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\AssetStoreResources\Top Down Camera\Scripts\CameraParent.cs" Line="1" Column="1" />
+      <File FileName="Assets\example.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
